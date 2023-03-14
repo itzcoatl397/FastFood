@@ -43,8 +43,8 @@ try{
     <div>
       <div v-if="laoding" class=" ">
         <div role="status">
-   <h3 class="mx-auto text-6xl text-center">Cargando....</h3>
-    <span class="sr-only">Loading...</span>
+   <h3 class="mx-auto text-6xl text-center">Cargando):....</h3>
+    <span class="sr-only">Loading..</span>
 </div>
         
     </div>
