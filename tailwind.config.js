@@ -6,7 +6,12 @@ module.exports = {
     "./src/**/*.{vue,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage:{
+        'hero-pattern': "url('/src/assets/img/empty-wood-table-top-abstract-blurred-restaurant-cafe-background-can-be-used-display-montage-your-products_7191-916.avif')",
+      }
+    },
   },
-  plugins: [],
+  
+
 }

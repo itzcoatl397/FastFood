@@ -16,6 +16,11 @@ component: () => import('../views/Home.vue')
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/Menu.vue')
+    },
+    {
+      path: '/carrito',
+      name: 'carrito',
+      component: () => import('../views/Carrito.vue')
     }
   ]
 })
