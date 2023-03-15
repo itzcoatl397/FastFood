@@ -73,6 +73,8 @@ const  menuDB = [
     imagen:"https://tiendasneto.com.mx/media/catalog/product/cache/cb1e6b076f68ee0ac6e5e542f63310fa/1/0/1030000128-1_10.jpg"
   }
 
+  ,
+  
 
   
 ];
