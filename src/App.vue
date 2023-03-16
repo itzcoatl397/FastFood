@@ -14,11 +14,9 @@ import { RouterLink, RouterView} from 'vue-router'
       <nav class="flex justify-evenly space-x-4 ">
         <RouterLink to="/">Inicio</RouterLink>
         <RouterLink to="/menu">Menu</RouterLink>
-        <RouterLink to="/login"  
-       class="bg-red-500 rounded-full w-1/6  px-4 py-2 text-white  text-center "
-        
-        
-        >Login</RouterLink>
+        <RouterLink to="/carrito">
+        <img src="../src/assets/img/cart.png " alt="">
+        </RouterLink>
       </nav>
     
 
