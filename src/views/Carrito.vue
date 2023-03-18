@@ -7,7 +7,9 @@ import { storeToRefs } from 'pinia'
 
 import { shoppingCart} from '../stores/shoppingCart';
 const shopping = shoppingCart()
-const { addCart } = storeToRefs(shopping)
+const { addCart ,quantity,totalCompra} = storeToRefs(shopping)
+
+console.log(quantity.value.quantity)
 </script>
 
 <template>
@@ -19,7 +21,9 @@ const { addCart } = storeToRefs(shopping)
         />
     </div>
       <div>
-        <Ordenar/>
+        <Ordenar
+        :totalCompra="totalCompra"
+        />
       </div>
     </div>
 </template>
