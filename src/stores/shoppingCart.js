@@ -12,20 +12,35 @@ export const shoppingCart = defineStore("shoppingCart", () => {
   const totalCompra = reactive({
     totalCompra: 0,
   });
+
   const addCarito = (item) => {
     addCart.items.push(item);
 
     totalCompraArr();
   };
+
   const totalCompraArr = () => {
     let total = 0;
-    total = addCart.items.reduce(
-      (acc, item) => (total = total + item.price),
-      0
-    );
+    total = addCart.items.reduce((acc, item) =>
+  (   acc + item.price ) , 0);
 
     totalCompra.totalCompra = total;
   };
 
-  return { addCarito, addCart, quantity, totalCompra };
+  const removeEat = (id) => {
+    const index = addCart.items.findIndex((item) => item.id === id);
+
+    if (index !== -1) {
+      addCart.items.splice(index, 1);
+    }
+    totalCompraArr();
+  };
+ 
+  return { addCarito, 
+    addCart, 
+    quantity, 
+    totalCompra,
+    removeEat ,
+
+  };
 });

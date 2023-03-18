@@ -28,13 +28,16 @@ const {addCarito} = shopping;
             <h3 class="font-medium text-2xl "> {{ name }}</h3>
             <p class="text-justify">{{ descripcion }}</p>
             <p class="text-2xl mt-4 ">Precio <span class=" font-bold text-red-800 text-xl">$ {{price }}</span></p>
+         
+        
          <button class="w-full bg-indigo-500  
 
             hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-opacity-50
          h-12
          mt-5 rounded-3xl mx-auto m-auto  text-white "
          
-         @click="addCarito({  id,name,price,imagen })"
+         @click="addCarito({ 
+             id,name,price,imagen})"
          
          >Add</button>
 

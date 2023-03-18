@@ -1,13 +1,22 @@
 <script setup>
-import { computed } from "vue";
+import { computed,reactive } from "vue";
 import { shoppingCart } from "../stores/shoppingCart";
+import DeleteCircle from 'vue-material-design-icons/DeleteCircle.vue';
 const shopping = shoppingCart();
 defineProps(["addCart"]);
 
 const addLength = computed(() => shopping.addCart.items.length > 0);
+
+const {removeEat,} = shopping
+
+const cantidad  =reactive({
+  cantidad: 0,
+})
+
 </script>
 
 <template>
+
   <div>
     <div v-if="addLength">
       <div class="grid md:grid-cols-2 lg:grid-cols-3 lg:w-full">
@@ -28,10 +37,13 @@ const addLength = computed(() => shopping.addCart.items.length > 0);
                 </p>
 
                 <div class="flex justify-end gap-6">
-                  <input type="button" value="-" />
-                  <p>3</p>
-
-                  <input type="button" value="+" />
+                  
+                 <DeleteCircle
+                 fillColor="#FF0000" 
+                 :size="36"
+                 class="cursor-pointer"
+                 @click="removeEat(id)"
+                 />
                 </div>
               </div>
             </div>
@@ -40,7 +52,11 @@ const addLength = computed(() => shopping.addCart.items.length > 0);
       </div>
     </div>
     <div v-else>
-      <h1 class="bg-red-500 w-1/2 mx-auto rounded-r-full px-5 py-2 text-white text-center ">Carrito vacio</h1>
+      <h1
+        class="bg-red-500 w-1/2 mx-auto rounded-r-full px-5 py-2 text-white text-center"
+      >
+        Carrito vacio
+      </h1>
     </div>
     <!---->
   </div>
