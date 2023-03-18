@@ -1,5 +1,17 @@
 <script setup>
+
+import { storeToRefs } from 'pinia'
+
+import { reactive } from 'vue';
+import { shoppingCart} from '../stores/shoppingCart';
+
 defineProps(['foodApi'])
+const shopping = shoppingCart()
+const { addCart } = storeToRefs(shopping)
+const {addCarito} = shopping;
+
+
+
 </script>
 
 <template>
@@ -20,12 +32,16 @@ defineProps(['foodApi'])
 
             hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-opacity-50
          h-12
-         mt-5 rounded-3xl mx-auto m-auto  text-white ">Add</button>
+         mt-5 rounded-3xl mx-auto m-auto  text-white "
+         
+         @click="addCarito({  id,name,price,imagen })"
+         
+         >Add</button>
 
         </div>
        </div>
     </div>
-  
+ 
    </div>
 </template>
 
