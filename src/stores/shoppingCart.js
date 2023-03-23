@@ -1,10 +1,11 @@
 import { reactive, computed } from "vue";
 import { defineStore } from "pinia";
-
+import swal from "sweetalert";
 export const shoppingCart = defineStore("shoppingCart", () => {
   const addCart = reactive({
     items: [],
   });
+  
   const quantity = reactive({
     quantity: 0,
   });
@@ -15,7 +16,8 @@ export const shoppingCart = defineStore("shoppingCart", () => {
 
   const addCarito = (item) => {
     addCart.items.push(item);
-
+  
+    
     totalCompraArr();
   };
 
@@ -27,8 +29,11 @@ export const shoppingCart = defineStore("shoppingCart", () => {
     totalCompra.totalCompra = total;
   };
 
+  
+
   const removeEat = (id) => {
     const index = addCart.items.findIndex((item) => item.id === id);
+    
 
     if (index !== -1) {
       addCart.items.splice(index, 1);

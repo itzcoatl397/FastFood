@@ -12,6 +12,7 @@
     "flowbite": "^1.6.4",
     "oh-vue-icons": "^1.0.0-rc3",
     "pinia": "^2.0.32",
+    "sweetalert": "^2.1.2",
     "vue": "^3.2.47",
     "vue-material-design-icons": "^5.2.0",
     "vue-router": "^4.1.6"

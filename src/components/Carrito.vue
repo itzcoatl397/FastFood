@@ -1,7 +1,9 @@
 <script setup>
-import { computed,reactive } from "vue";
+import { computed } from "vue";
 import { shoppingCart } from "../stores/shoppingCart";
 import DeleteCircle from 'vue-material-design-icons/DeleteCircle.vue';
+
+import swal from "sweetalert";
 const shopping = shoppingCart();
 defineProps(["addCart"]);
 
@@ -9,9 +11,21 @@ const addLength = computed(() => shopping.addCart.items.length > 0);
 
 const {removeEat,} = shopping;
 
-const cantidad  =reactive({
-  cantidad: 0,
-})
+const swalAlert = (name) => {
+  swal({
+    title: `Producto eliminado  ${name}`,
+    text: "Eliminado del carrito",
+    icon: "error",
+    defeat: true,
+ 
+    
+  });
+};
+
+const deleteElemento = (id,name) => {
+  swalAlert(name);
+  removeEat(id,name);
+};
 
 </script>
 
@@ -42,7 +56,7 @@ const cantidad  =reactive({
                  fillColor="#FF0000" 
                  :size="36"
                  class="cursor-pointer"
-                 @click="removeEat(id)"
+                 @click="deleteElemento(id,name)"
                  />
                 </div>
               </div>
