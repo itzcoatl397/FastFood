@@ -1,15 +1,12 @@
 <script setup>
 
 import { storeToRefs } from 'pinia'
-
-import { reactive } from 'vue';
 import { shoppingCart} from '../stores/shoppingCart';
 
 defineProps(['foodApi'])
 const shopping = shoppingCart()
-const { addCart } = storeToRefs(shopping)
-const {addCarito} = shopping;
 
+const {addCarito} = shopping;
 
 
 </script>

@@ -7,7 +7,7 @@ defineProps(["addCart"]);
 
 const addLength = computed(() => shopping.addCart.items.length > 0);
 
-const {removeEat,} = shopping
+const {removeEat,} = shopping;
 
 const cantidad  =reactive({
   cantidad: 0,
